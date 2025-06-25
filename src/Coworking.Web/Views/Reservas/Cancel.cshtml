@@ -1,0 +1,22 @@
+﻿@using Coworking.Web.ViewModels
+@model CancelReservaViewModel
+
+<div class="container">
+    <h2>Cancelar Reserva</h2>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <form asp-action="Cancel">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="alert alert-warning mt-3">
+            <h5>Você tem certeza que deseja cancelar esta reserva?</h5>
+            <p>Esta ação não pode ser desfeita.</p>
+        </div>
+
+        <div class="form-group mt-3">
+            <input type="submit" value="Confirmar Cancelamento" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+        </div>
+    </form>
+</div>

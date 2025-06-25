@@ -1,0 +1,45 @@
+﻿@using Coworking.Web.ViewModels
+@model CreateReservaViewModel
+
+<div class="container mt-4">
+    <h2>Nova Reserva</h2>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <form asp-action="Create">
+        <div class="form-group">
+            <label asp-for="SalaId" class="control-label"></label>
+            <select asp-for="SalaId" asp-items="ViewBag.Salas" class="form-control"></select>
+            <span asp-validation-for="SalaId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="UsuarioId" class="control-label"></label>
+            <select asp-for="UsuarioId" asp-items="ViewBag.Usuarios" class="form-control"></select>
+            <span asp-validation-for="UsuarioId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DataInicioReserva" class="control-label"></label>
+            <input asp-for="DataInicioReserva" class="form-control" type="datetime-local" />
+            <span asp-validation-for="DataInicioReserva" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DataFimReserva" class="control-label"></label>
+            <input asp-for="DataFimReserva" class="form-control" type="datetime-local" />
+            <span asp-validation-for="DataFimReserva" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mt-3">
+            <input type="submit" value="Criar" class="btn btn-primary" />
+            <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

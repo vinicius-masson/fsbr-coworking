@@ -1,0 +1,70 @@
+﻿@using Coworking.Web.ViewModels
+@model UpdateReservaViewModel
+
+<div class="container">
+    <h2>Editar Reserva</h2>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <form asp-action="Update">
+        <input type="hidden" asp-for="Id" />
+
+        <!-- Primeira linha - Usuário e Sala lado a lado -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="UsuarioId" class="control-label">Usuário</label>
+                    <select asp-for="UsuarioId" asp-items="Model.Usuarios"
+                            class="form-control form-control-sm"></select>
+                    <span asp-validation-for="UsuarioId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="SalaId" class="control-label">Sala</label>
+                    <select asp-for="SalaId" asp-items="Model.Salas"
+                            class="form-control form-control-sm"></select>
+                    <span asp-validation-for="SalaId" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segunda linha - Datas lado a lado -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="DataInicioReserva" class="control-label">Data Do Início</label>
+                    <input asp-for="DataInicioReserva"
+                           class="form-control form-control-sm"
+                           type="datetime-local"
+                           value="@Model.DataInicioReserva.ToString("yyyy-MM-ddTHH:mm")" />
+                    <span asp-validation-for="DataInicioReserva" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="DataFimReserva" class="control-label">Data do fim da Reserva</label>
+                    <input asp-for="DataFimReserva"
+                           class="form-control form-control-sm"
+                           type="datetime-local"
+                           value="@Model.DataFimReserva.ToString("yyyy-MM-ddTHH:mm")" />
+                    <span asp-validation-for="DataFimReserva" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botões -->
+        <div class="form-group row mt-3">
+            <div class="col-md-12">
+                <input type="submit" value="Salvar" class="btn btn-primary btn-sm" />
+                <a asp-action="Index" class="btn btn-secondary btn-sm ml-2">Voltar</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

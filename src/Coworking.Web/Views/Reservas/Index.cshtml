@@ -1,0 +1,37 @@
+﻿@using Coworking.Web.ViewModels
+@model List<ReservaViewModel>
+
+<div class="container mt-4">
+    <h2>Reservas de Salas</h2>
+
+    <div class="mb-3">
+        <a asp-action="Create" class="btn btn-primary">Nova Reserva</a>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Sala</th>
+                <th>Usuário</th>
+                <th>Data/Hora Início</th>
+                <th>Data/Hora Fim</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reserva in Model)
+            {
+                <tr>
+                    <td>@reserva.SalaDescricao</td>
+                    <td>@reserva.UsuarioNome</td>
+                    <td>@reserva.DataInicio.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@reserva.DataFim.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@reserva.Id" class="btn btn-sm btn-warning">Editar</a>
+                        <a asp-action="Cancel" asp-route-id="@reserva.Id" class="btn btn-sm btn-danger">Cancelar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
