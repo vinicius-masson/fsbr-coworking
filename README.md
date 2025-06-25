@@ -16,13 +16,13 @@ Teste técnico de construção de uma API .NET e uma aplicação ASP.NET MVC par
 ```bash
    git clone https://github.com/vinicius-masson/fsbr-coworking.git
 ```
-3. Abra o arquivo `src/Coworking.API/appsettings.json` e atualize a connection string:
+2. Abra o arquivo `src/Coworking.API/appsettings.json` e atualize a connection string:
    ```json
    "ConnectionStrings": {
      "CoworkingConnection": "Server=seu_servidor;Database=Coworking;User Id=seu_usuario;Password=sua_senha;TrustServerCertificate=true;"
    }
    ```
-4. Coloque o e-mail que deseja receber as confirmações de reserva no campo "DestinationEmail"
+3. Coloque o e-mail que deseja receber as confirmações de reserva no campo "DestinationEmail"
 
 ### 🛠️ Configurar o banco de dados
 
