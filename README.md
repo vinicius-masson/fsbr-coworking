@@ -13,9 +13,9 @@ Teste técnico de construção de uma API .NET e uma aplicação ASP.NET MVC par
 ### 📥 Configuração inicial
 
 1. Extraia o projeto zipado, ou clone o repositório:
-```bash
+ ```bash
    git clone https://github.com/vinicius-masson/fsbr-coworking.git
-```
+ ```
 2. Abra o arquivo `src/Coworking.API/appsettings.json` e atualize a connection string:
    ```json
    "ConnectionStrings": {
