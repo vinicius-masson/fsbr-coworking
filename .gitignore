@@ -1,0 +1,29 @@
+## Diretórios de build e IDE
+**/.vs/
+**/bin/
+**/obj/
+TestResults/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.cache
+*.docstates
+
+## Arquivos de usuário
+*.userprefs
+*.user
+*.suo
+
+## Dependências
+[Nn]uget/
+*.nupkg
+packages/
+
+## Outros
+*.swp
+*.log
+*.pidb
+*.DS_Store
+*.pyc
+*.~lock.*
